@@ -39,5 +39,5 @@ var LZ = (function () {
     });
   }
 
-  return { tiefstellen: tiefstellen, version: "1.0.0" };
+  return { tiefstellen: tiefstellen, version: "1.0.1" };
 })();
