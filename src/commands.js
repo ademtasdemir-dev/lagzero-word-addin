@@ -1,6 +1,6 @@
 /* LAG|ZERØ – Ribbon-Befehle (ohne Seitenleiste) */
 /* global Office, Word, LZ */
-var LZ_DEBUG = true; // TEMP: Fehler ins Dokument schreiben, damit man sie ohne Seitenleiste sieht
+var LZ_DEBUG = false; // true = Ergebnis/Fehler als Zeile ins Dokument schreiben (nur zum Testen)
 
 function lzReport(msg) {
   if (!LZ_DEBUG) return Promise.resolve();

@@ -68,5 +68,5 @@ var LZ = (function () {
     });
   }
 
-  return { tiefstellen: tiefstellen, version: "1.0.3" };
+  return { tiefstellen: tiefstellen, version: "1.0.4" };
 })();
