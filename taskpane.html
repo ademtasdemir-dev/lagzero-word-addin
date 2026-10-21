@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LAG|ZERØ Tools</title>
+  <link rel="stylesheet" href="src/taskpane.css">
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <script src="src/lz-tools.js"></script>
+</head>
+<body>
+  <header class="lz-head">
+    <div class="lz-logo">LAG<span>|</span>ZERØ <em>VERIFIED</em></div>
+    <div class="lz-slogan">TESTED. MEASURED. OPTIMIZED.</div>
+  </header>
+
+  <main>
+    <section class="tool">
+      <div class="tool-top">
+        <img src="assets/lz01-64.png" alt="" width="40" height="40">
+        <div>
+          <div class="tag">TOOL #01 · ZAHLENSYSTEME</div>
+          <h2>Basis tiefstellen</h2>
+        </div>
+      </div>
+      <p class="demo"><code>1010(2)</code> → 1010<sub>2</sub> &nbsp; <code>FF(16)</code> → FF<sub>16</sub></p>
+      <button id="btn01" class="btn" disabled>Im ganzen Dokument tiefstellen</button>
+      <div id="out01" class="out" role="status" aria-live="polite"></div>
+      <details>
+        <summary>Was bleibt unverändert?</summary>
+        <ul>
+          <li><code>Aufgabe (2)</code>, also mit Leerzeichen vor der Klammer</li>
+          <li><code>(eier)</code>, also Text in Klammern</li>
+          <li><code>11(100)</code>, also 3 oder mehr Ziffern</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="soon">
+      <div class="tag">DEMNÄCHST</div>
+      <p>Weitere LAG|ZERØ Tools kommen hier dazu.</p>
+    </section>
+  </main>
+
+  <footer>
+    <a href="https://discord.gg/wUFMj2dGX8" target="_blank" rel="noopener">LAG|ZERØ Discord</a> ·
+    <a href="support.html" target="_blank" rel="noopener">Hilfe</a> ·
+    <span id="ver"></span>
+  </footer>
+
+  <script src="src/taskpane.js"></script>
+</body>
+</html>

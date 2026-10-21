@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+           xsi:type="TaskPaneApp">
+  <Id>f13e8572-c3e3-4cef-adea-04263c54642b</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>LAG|ZERØ</ProviderName>
+  <DefaultLocale>de-DE</DefaultLocale>
+  <DisplayName DefaultValue="LAG|ZERØ Tools"/>
+  <Description DefaultValue="LAG|ZERØ Werkzeuge für Word. #01 Zahlensysteme: macht aus 1010(2) die Schreibweise mit tiefgestellter Basis, im ganzen Dokument mit einem Klick."/>
+  <IconUrl DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/logo-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/logo-64.png"/>
+  <SupportUrl DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/support.html"/>
+  <AppDomains>
+    <AppDomain>https://sikkkilaci.github.io</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Document"/>
+  </Hosts>
+  <Requirements>
+    <Sets DefaultMinVersion="1.3">
+      <Set Name="WordApi" MinVersion="1.3"/>
+    </Sets>
+  </Requirements>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/taskpane.html"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Document">
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="GetStarted.Title"/>
+            <Description resid="GetStarted.Description"/>
+            <LearnMoreUrl resid="Support.Url"/>
+          </GetStarted>
+          <FunctionFile resid="Commands.Url"/>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <CustomTab id="LZ.Tab">
+              <Group id="LZ.Group.Zahlensysteme">
+                <Label resid="Group.Zahlensysteme"/>
+                <Icon>
+                  <bt:Image size="16" resid="Lz01.16"/>
+                  <bt:Image size="32" resid="Lz01.32"/>
+                  <bt:Image size="80" resid="Lz01.80"/>
+                </Icon>
+                <Control xsi:type="Button" id="LZ.Btn.Tiefstellen">
+                  <Label resid="Btn.Tiefstellen.Label"/>
+                  <Supertip>
+                    <Title resid="Btn.Tiefstellen.Label"/>
+                    <Description resid="Btn.Tiefstellen.Tip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Lz01.16"/>
+                    <bt:Image size="32" resid="Lz01.32"/>
+                    <bt:Image size="80" resid="Lz01.80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>lz01Tiefstellen</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+              <Group id="LZ.Group.App">
+                <Label resid="Group.App"/>
+                <Icon>
+                  <bt:Image size="16" resid="Logo.16"/>
+                  <bt:Image size="32" resid="Logo.32"/>
+                  <bt:Image size="80" resid="Logo.80"/>
+                </Icon>
+                <Control xsi:type="Button" id="LZ.Btn.Panel">
+                  <Label resid="Btn.Panel.Label"/>
+                  <Supertip>
+                    <Title resid="Btn.Panel.Label"/>
+                    <Description resid="Btn.Panel.Tip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Logo.16"/>
+                    <bt:Image size="32" resid="Logo.32"/>
+                    <bt:Image size="80" resid="Logo.80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>LZ.Taskpane</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+              <Label resid="Tab.Label"/>
+            </CustomTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Logo.16" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/logo-16.png"/>
+        <bt:Image id="Logo.32" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/logo-32.png"/>
+        <bt:Image id="Logo.80" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/logo-80.png"/>
+        <bt:Image id="Lz01.16" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/lz01-16.png"/>
+        <bt:Image id="Lz01.32" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/lz01-32.png"/>
+        <bt:Image id="Lz01.80" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/lz01-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="Commands.Url" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/commands.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/taskpane.html"/>
+        <bt:Url id="Support.Url" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/support.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="Tab.Label" DefaultValue="LAG|ZERØ"/>
+        <bt:String id="Group.Zahlensysteme" DefaultValue="Zahlensysteme"/>
+        <bt:String id="Group.App" DefaultValue="LAG|ZERØ"/>
+        <bt:String id="Btn.Tiefstellen.Label" DefaultValue="Basis tiefstellen"/>
+        <bt:String id="Btn.Panel.Label" DefaultValue="Tools öffnen"/>
+        <bt:String id="GetStarted.Title" DefaultValue="LAG|ZERØ Tools sind bereit"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="Btn.Tiefstellen.Tip" DefaultValue="Macht aus 1010(2) und FF(16) die Schreibweise mit tiefgestellter Basis. &quot;Aufgabe (2)&quot; mit Leerzeichen bleibt so."/>
+        <bt:String id="Btn.Panel.Tip" DefaultValue="Öffnet die LAG|ZERØ Seitenleiste mit allen Tools."/>
+        <bt:String id="GetStarted.Description" DefaultValue="Oben im Reiter LAG|ZERØ findest du alle Tools."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
