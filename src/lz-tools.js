@@ -24,7 +24,7 @@ var LZ = (function () {
         var parts = hits.map(function (r) {
           var open = r.search("(", { matchCase: true }).getFirst();
           var close = r.search(")", { matchCase: true }).getFirst();
-          var digits = open.getRange("After").expandTo(close.getRange("Before"));
+          var digits = open.getRange("End").expandTo(close.getRange("Start"));
           return { open: open, close: close, digits: digits };
         });
         parts.forEach(function (p) { p.digits.font.subscript = true; });
@@ -39,5 +39,5 @@ var LZ = (function () {
     });
   }
 
-  return { tiefstellen: tiefstellen, version: "1.0.1" };
+  return { tiefstellen: tiefstellen, version: "1.0.2" };
 })();
