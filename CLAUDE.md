@@ -27,3 +27,13 @@ Partner-Center-Konto (kostenlos), Einreichung mit privacy.html + support.html, I
 ## Arbeitsweise mit Adem
 Direkt, einfache Sprache, wenig Fachchinesisch. Anleitungen als HTML im LAG|ZERØ-Design + ZIP.
 Bei Dateisammlungen immer ein anklickbares HTML-Inhaltsverzeichnis.
+
+## Verteilung (Stand v1.0.4)
+- Paket `download/LAGZERO_Word_Tools.zip`: ANLEITUNG.html, Installieren.bat, Deinstallieren.bat, lagzero-word-addin.xml (= manifest.xml), Testdokument.docx, media/
+- Installieren.bat: kopiert Manifest nach `%LOCALAPPDATA%\LAGZERO\WordKatalog` und trägt ihn als
+  TrustedCatalog `{212c4ebf-75af-4458-b496-34fd6f3ecf0b}` mit UNC-Pfad `\\localhost\C$\...` ein (Flags=1).
+  Danach in Word: Add-Ins → Weitere Add-Ins → GETEILTER ORDNER → Hinzufügen. Parameter `/quiet` = ohne pause.
+- Privates Microsoft-Konto hat in Word Desktop KEIN "Mein Add-In hochladen" → deshalb geteilter Ordner.
+- Word cached Add-In-Dateien sehr hartnäckig: bei Updates `?v=` hochzählen, Version im Manifest erhöhen;
+  beim Entwickeln half nur eine neue `<Id>` (dann neu hinzufügen). Manifest im Paket immer mit neu bauen.
+- Debug: in `src/commands.js` `LZ_DEBUG = true` schreibt Ergebnis/Fehler als Zeile ins Dokument.
