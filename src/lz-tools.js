@@ -4,6 +4,7 @@
  *   Nur wenn direkt vor "(" eine Ziffer 0-9 oder A-F steht und in der Klammer 1-2 Ziffern sind.
  *   "Aufgabe (2)" (Leerzeichen), "(eier)" und "11(100)" bleiben unverändert.
  *   Wirkt im Haupttext, in Tabellen sowie in allen Kopf- und Fußzeilen.
+ * #02 Potenzen: 10^2 -> 10 + hochgestellte 2 (siehe unten)
  */
 /* global Word */
 var LZ = (function () {
@@ -50,13 +51,14 @@ var LZ = (function () {
     });
   }
 
-  function tiefstellen() {
+  // Läuft eine Verarbeitung über Haupttext + alle Kopf-/Fußzeilen, liefert die Summe
+  function runAll(processFn) {
     return Word.run(function (context) {
       return collectBodies(context).then(function (bodies) {
         var total = 0;
         return bodies.reduce(function (chain, b, i) {
           return chain.then(function () {
-            return processBody(context, b)
+            return processFn(context, b)
               .then(function (n) { total += n; })
               .catch(function (e) {
                 if (i === 0) throw e; // Fehler im Haupttext weitergeben
@@ -68,5 +70,43 @@ var LZ = (function () {
     });
   }
 
-  return { tiefstellen: tiefstellen, version: "1.0.4" };
+  function tiefstellen() { return runAll(processBody); }
+
+  /* #02 Potenzen hochstellen
+   *   10^2 -> 10 + hochgestellte 2,  2^10 -> 2 + hochgestellte 10,  16^0, 2^-3
+   *   Das ^ verschwindet, die Zahl dahinter wird hochgestellt. Text wie "^abc" bleibt.
+   *   In der Word-Suche ist "^" ein Sonderzeichen: "^^" findet ein echtes ^.
+   */
+  var HOCH = ["^^[0-9]@", "^^-[0-9]@"];
+  var HOCH_VALID = /^\^-?\d+$/;
+
+  function processHoch(context, body) {
+    var lists = HOCH.map(function (pat) {
+      var f = body.search(pat, { matchWildcards: true }); f.load("items/text"); return f;
+    });
+    return context.sync().then(function () {
+      var hits = [];
+      lists.forEach(function (l) { l.items.forEach(function (r) { if (HOCH_VALID.test(r.text)) hits.push(r); }); });
+      if (hits.length === 0) return 0;
+      var parts = hits.map(function (r) {
+        var caret = r.search("^^", { matchCase: true }).getFirst();
+        var digits = caret.getRange("End").expandTo(r.getRange("End"));
+        return { caret: caret, digits: digits };
+      });
+      parts.forEach(function (p) { p.digits.font.superscript = true; });
+      return context.sync().then(function () {
+        parts.forEach(function (p) { p.caret.delete(); });
+        return context.sync().then(function () { return hits.length; });
+      });
+    });
+  }
+
+  function hochstellen() { return runAll(processHoch); }
+
+  // Beides in einem Rutsch
+  function alles() {
+    return tiefstellen().then(function (a) { return hochstellen().then(function (b) { return { tief: a, hoch: b }; }); });
+  }
+
+  return { tiefstellen: tiefstellen, hochstellen: hochstellen, alles: alles, version: "1.1.0" };
 })();

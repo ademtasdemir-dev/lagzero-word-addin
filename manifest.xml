@@ -4,12 +4,12 @@
            xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
            xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
            xsi:type="TaskPaneApp">
-  <Id>be32a056-3f66-448c-8276-3aed783fdd12</Id>
-  <Version>1.0.4.0</Version>
+  <Id>9cb91c24-d152-41ee-8bb5-73af5e869e77</Id>
+  <Version>1.1.0.0</Version>
   <ProviderName>LAG|ZERØ</ProviderName>
   <DefaultLocale>de-DE</DefaultLocale>
   <DisplayName DefaultValue="LAG|ZERØ Tools"/>
-  <Description DefaultValue="LAG|ZERØ Werkzeuge für Word. #01 Zahlensysteme: macht aus 1010(2) die Schreibweise mit tiefgestellter Basis, im ganzen Dokument mit einem Klick."/>
+  <Description DefaultValue="LAG|ZERØ Werkzeuge für Word: Zahlensysteme mit einem Klick. 1010(2) wird zu tiefgestellter Basis, 2^10 wird zu hochgestellter Potenz – im ganzen Dokument."/>
   <IconUrl DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/logo-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/logo-64.png"/>
   <SupportUrl DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/support.html"/>
@@ -25,7 +25,7 @@
     </Sets>
   </Requirements>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/taskpane.html?v=104"/>
+    <SourceLocation DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/taskpane.html?v=110"/>
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
 
@@ -61,6 +61,36 @@
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
                     <FunctionName>lz01Tiefstellen</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="LZ.Btn.Hochstellen">
+                  <Label resid="Btn.Hochstellen.Label"/>
+                  <Supertip>
+                    <Title resid="Btn.Hochstellen.Label"/>
+                    <Description resid="Btn.Hochstellen.Tip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Lz02.16"/>
+                    <bt:Image size="32" resid="Lz02.32"/>
+                    <bt:Image size="80" resid="Lz02.80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>lz02Hochstellen</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="LZ.Btn.Alles">
+                  <Label resid="Btn.Alles.Label"/>
+                  <Supertip>
+                    <Title resid="Btn.Alles.Label"/>
+                    <Description resid="Btn.Alles.Tip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="LzAll.16"/>
+                    <bt:Image size="32" resid="LzAll.32"/>
+                    <bt:Image size="80" resid="LzAll.80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>lzAlles</FunctionName>
                   </Action>
                 </Control>
               </Group>
@@ -102,10 +132,16 @@
         <bt:Image id="Lz01.16" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/lz01-16.png"/>
         <bt:Image id="Lz01.32" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/lz01-32.png"/>
         <bt:Image id="Lz01.80" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/lz01-80.png"/>
+        <bt:Image id="Lz02.16" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/lz02-16.png"/>
+        <bt:Image id="Lz02.32" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/lz02-32.png"/>
+        <bt:Image id="Lz02.80" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/lz02-80.png"/>
+        <bt:Image id="LzAll.16" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/lzall-16.png"/>
+        <bt:Image id="LzAll.32" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/lzall-32.png"/>
+        <bt:Image id="LzAll.80" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/lzall-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="Commands.Url" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/commands.html?v=104"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/taskpane.html?v=104"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/commands.html?v=110"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/taskpane.html?v=110"/>
         <bt:Url id="Support.Url" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/support.html"/>
       </bt:Urls>
       <bt:ShortStrings>
@@ -114,10 +150,14 @@
         <bt:String id="Group.App" DefaultValue="LAG|ZERØ"/>
         <bt:String id="Btn.Tiefstellen.Label" DefaultValue="Basis tiefstellen"/>
         <bt:String id="Btn.Panel.Label" DefaultValue="Tools öffnen"/>
+        <bt:String id="Btn.Hochstellen.Label" DefaultValue="Potenz hochstellen"/>
+        <bt:String id="Btn.Alles.Label" DefaultValue="Alles formatieren"/>
         <bt:String id="GetStarted.Title" DefaultValue="LAG|ZERØ Tools sind bereit"/>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="Btn.Tiefstellen.Tip" DefaultValue="Macht aus 1010(2) und FF(16) die Schreibweise mit tiefgestellter Basis. &quot;Aufgabe (2)&quot; mit Leerzeichen bleibt so."/>
+        <bt:String id="Btn.Hochstellen.Tip" DefaultValue="Macht aus 10^2 und 2^10 die Schreibweise mit hochgestellter Potenz. Das ^ verschwindet."/>
+        <bt:String id="Btn.Alles.Tip" DefaultValue="Basis tiefstellen und Potenz hochstellen in einem Klick."/>
         <bt:String id="Btn.Panel.Tip" DefaultValue="Öffnet die LAG|ZERØ Seitenleiste mit allen Tools."/>
         <bt:String id="GetStarted.Description" DefaultValue="Oben im Reiter LAG|ZERØ findest du alle Tools."/>
       </bt:LongStrings>
