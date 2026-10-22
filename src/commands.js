@@ -1,11 +1,11 @@
 /* LAG|ZERØ – Ribbon-Befehle (ohne Seitenleiste) */
 /* global Office, Word, LZ */
-var LZ_DEBUG = true; // true = Ergebnis/Fehler als Zeile ins Dokument schreiben (nur zum Testen)
+var LZ_DEBUG = false; // true = Ergebnis/Fehler als Zeile ins Dokument schreiben (nur zum Testen)
 
-function lzReport(msg) {
-  if (!LZ_DEBUG) return Promise.resolve();
+function lzReport(msg, isError) {
+  if (!LZ_DEBUG && !isError) return Promise.resolve();
   return Word.run(function (ctx) {
-    ctx.document.body.insertParagraph("[LAG|ZERØ DEBUG] " + msg, "End");
+    ctx.document.body.insertParagraph("[LAG|ZERØ] " + msg, "End");
     return ctx.sync();
   }).catch(function () {});
 }
@@ -17,11 +17,11 @@ function lz01Tiefstellen(event) {
       .then(function (n) { return lzReport("OK: " + n + " ersetzt (v" + LZ.version + ")"); })
       .catch(function (e) {
         var m = (e && (e.code ? e.code + ": " : "") + (e.message || e)) + (e && e.debugInfo ? " | " + JSON.stringify(e.debugInfo) : "");
-        return lzReport("FEHLER: " + m);
+        return lzReport("FEHLER: " + m, true);
       })
       .then(done, done);
   } catch (e) {
-    lzReport("FEHLER (sync): " + (e && e.message ? e.message : e)).then(done, done);
+    lzReport("FEHLER (sync): " + (e && e.message ? e.message : e), true).then(done, done);
   }
 }
 
@@ -32,11 +32,11 @@ function runCmd(event, fn, label) {
       .then(function (n) { return lzReport("OK " + label + ": " + JSON.stringify(n) + " (v" + LZ.version + ")"); })
       .catch(function (e) {
         var m = (e && (e.code ? e.code + ": " : "") + (e.message || e)) + (e && e.debugInfo ? " | " + JSON.stringify(e.debugInfo) : "");
-        return lzReport("FEHLER " + label + ": " + m);
+        return lzReport("FEHLER " + label + ": " + m + " – bitte Word neu starten oder im LAG|ZERØ-Discord melden", true);
       })
       .then(done, done);
   } catch (e) {
-    lzReport("FEHLER (sync): " + (e && e.message ? e.message : e)).then(done, done);
+    lzReport("FEHLER (sync): " + (e && e.message ? e.message : e), true).then(done, done);
   }
 }
 function lz02Hochstellen(event) { runCmd(event, LZ.hochstellen, "#02"); }

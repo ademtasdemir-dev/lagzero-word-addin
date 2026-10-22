@@ -77,7 +77,7 @@ var LZ = (function () {
    *   Das ^ verschwindet, die Zahl dahinter wird hochgestellt. Text wie "^abc" bleibt.
    *   In der Word-Suche ist "^" ein Sonderzeichen: "^^" findet ein echtes ^.
    */
-  var HOCH = ["^^[0-9]@", "^^-[0-9]@"];
+  var HOCH = ["^^[0-9]@>", "^^-[0-9]@>"]; // ">" = bis Wortende, sonst stoppt Word nach der 1. Ziffer
   var HOCH_VALID = /^\^-?\d+$/;
 
   function processHoch(context, body) {
@@ -108,5 +108,5 @@ var LZ = (function () {
     return tiefstellen().then(function (a) { return hochstellen().then(function (b) { return { tief: a, hoch: b }; }); });
   }
 
-  return { tiefstellen: tiefstellen, hochstellen: hochstellen, alles: alles, version: "1.1.0" };
+  return { tiefstellen: tiefstellen, hochstellen: hochstellen, alles: alles, version: "1.1.1" };
 })();

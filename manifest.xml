@@ -4,8 +4,8 @@
            xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
            xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
            xsi:type="TaskPaneApp">
-  <Id>9cb91c24-d152-41ee-8bb5-73af5e869e77</Id>
-  <Version>1.1.0.0</Version>
+  <Id>ad05ffed-429f-4605-b0be-031353fd2b94</Id>
+  <Version>1.1.1.0</Version>
   <ProviderName>LAG|ZERØ</ProviderName>
   <DefaultLocale>de-DE</DefaultLocale>
   <DisplayName DefaultValue="LAG|ZERØ Tools"/>
@@ -25,7 +25,7 @@
     </Sets>
   </Requirements>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/taskpane.html?v=110"/>
+    <SourceLocation DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/taskpane.html?v=111"/>
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
 
@@ -140,8 +140,8 @@
         <bt:Image id="LzAll.80" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/lzall-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="Commands.Url" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/commands.html?v=110"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/taskpane.html?v=110"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/commands.html?v=111"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/taskpane.html?v=111"/>
         <bt:Url id="Support.Url" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/support.html"/>
       </bt:Urls>
       <bt:ShortStrings>
