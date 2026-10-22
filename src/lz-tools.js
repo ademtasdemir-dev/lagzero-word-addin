@@ -108,5 +108,5 @@ var LZ = (function () {
     return tiefstellen().then(function (a) { return hochstellen().then(function (b) { return { tief: a, hoch: b }; }); });
   }
 
-  return { tiefstellen: tiefstellen, hochstellen: hochstellen, alles: alles, version: "1.1.1" };
+  return { tiefstellen: tiefstellen, hochstellen: hochstellen, alles: alles, version: "1.1.2" };
 })();
