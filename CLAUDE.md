@@ -2,7 +2,7 @@
 
 ## Was das ist
 Office-Web-Add-In (Office.js, XML-Manifest) für Word. Eigener Reiter „LAG|ZERØ" + Seitenleiste.
-Gehostet über GitHub Pages: https://sikkkilaci.github.io/lagzero-word-addin/
+Gehostet über GitHub Pages: https://ademtasdemir-dev.github.io/lagzero-word-addin/
 Das ist das Zuhause der **LAG|ZERØ Word Add-In Familie**: Neue Tools werden als weitere Gruppe/Button im
 Reiter und als weitere Karte in der Seitenleiste ergänzt. Die Logik kommt nach `src/lz-tools.js`.
 

@@ -10,11 +10,11 @@
   <DefaultLocale>de-DE</DefaultLocale>
   <DisplayName DefaultValue="LAG|ZERØ Tools"/>
   <Description DefaultValue="LAG|ZERØ Werkzeuge für Word: Zahlensysteme mit einem Klick. 1010(2) wird zu tiefgestellter Basis, 2^10 wird zu hochgestellter Potenz – im ganzen Dokument."/>
-  <IconUrl DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/logo-32.png"/>
-  <HighResolutionIconUrl DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/logo-64.png"/>
-  <SupportUrl DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/support.html"/>
+  <IconUrl DefaultValue="https://ademtasdemir-dev.github.io/lagzero-word-addin/assets/logo-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://ademtasdemir-dev.github.io/lagzero-word-addin/assets/logo-64.png"/>
+  <SupportUrl DefaultValue="https://ademtasdemir-dev.github.io/lagzero-word-addin/support.html"/>
   <AppDomains>
-    <AppDomain>https://sikkkilaci.github.io</AppDomain>
+    <AppDomain>https://ademtasdemir-dev.github.io</AppDomain>
   </AppDomains>
   <Hosts>
     <Host Name="Document"/>
@@ -25,7 +25,7 @@
     </Sets>
   </Requirements>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/taskpane.html?v=111"/>
+    <SourceLocation DefaultValue="https://ademtasdemir-dev.github.io/lagzero-word-addin/taskpane.html?v=111"/>
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
 
@@ -126,23 +126,23 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="Logo.16" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/logo-16.png"/>
-        <bt:Image id="Logo.32" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/logo-32.png"/>
-        <bt:Image id="Logo.80" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/logo-80.png"/>
-        <bt:Image id="Lz01.16" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/lz01-16.png"/>
-        <bt:Image id="Lz01.32" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/lz01-32.png"/>
-        <bt:Image id="Lz01.80" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/lz01-80.png"/>
-        <bt:Image id="Lz02.16" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/lz02-16.png"/>
-        <bt:Image id="Lz02.32" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/lz02-32.png"/>
-        <bt:Image id="Lz02.80" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/lz02-80.png"/>
-        <bt:Image id="LzAll.16" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/lzall-16.png"/>
-        <bt:Image id="LzAll.32" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/lzall-32.png"/>
-        <bt:Image id="LzAll.80" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/assets/lzall-80.png"/>
+        <bt:Image id="Logo.16" DefaultValue="https://ademtasdemir-dev.github.io/lagzero-word-addin/assets/logo-16.png"/>
+        <bt:Image id="Logo.32" DefaultValue="https://ademtasdemir-dev.github.io/lagzero-word-addin/assets/logo-32.png"/>
+        <bt:Image id="Logo.80" DefaultValue="https://ademtasdemir-dev.github.io/lagzero-word-addin/assets/logo-80.png"/>
+        <bt:Image id="Lz01.16" DefaultValue="https://ademtasdemir-dev.github.io/lagzero-word-addin/assets/lz01-16.png"/>
+        <bt:Image id="Lz01.32" DefaultValue="https://ademtasdemir-dev.github.io/lagzero-word-addin/assets/lz01-32.png"/>
+        <bt:Image id="Lz01.80" DefaultValue="https://ademtasdemir-dev.github.io/lagzero-word-addin/assets/lz01-80.png"/>
+        <bt:Image id="Lz02.16" DefaultValue="https://ademtasdemir-dev.github.io/lagzero-word-addin/assets/lz02-16.png"/>
+        <bt:Image id="Lz02.32" DefaultValue="https://ademtasdemir-dev.github.io/lagzero-word-addin/assets/lz02-32.png"/>
+        <bt:Image id="Lz02.80" DefaultValue="https://ademtasdemir-dev.github.io/lagzero-word-addin/assets/lz02-80.png"/>
+        <bt:Image id="LzAll.16" DefaultValue="https://ademtasdemir-dev.github.io/lagzero-word-addin/assets/lzall-16.png"/>
+        <bt:Image id="LzAll.32" DefaultValue="https://ademtasdemir-dev.github.io/lagzero-word-addin/assets/lzall-32.png"/>
+        <bt:Image id="LzAll.80" DefaultValue="https://ademtasdemir-dev.github.io/lagzero-word-addin/assets/lzall-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="Commands.Url" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/commands.html?v=111"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/taskpane.html?v=111"/>
-        <bt:Url id="Support.Url" DefaultValue="https://sikkkilaci.github.io/lagzero-word-addin/support.html"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://ademtasdemir-dev.github.io/lagzero-word-addin/commands.html?v=111"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://ademtasdemir-dev.github.io/lagzero-word-addin/taskpane.html?v=111"/>
+        <bt:Url id="Support.Url" DefaultValue="https://ademtasdemir-dev.github.io/lagzero-word-addin/support.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="Tab.Label" DefaultValue="LAG|ZERØ"/>

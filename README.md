@@ -10,9 +10,9 @@ Office-Add-In (Office.js) mit eigenem Reiter **LAG|ZERØ** und Seitenleiste in W
 | 01 | Basis tiefstellen | `1010(2)` → 1010₂, `FF(16)` → FF₁₆ im ganzen Dokument. `Aufgabe (2)` (mit Leerzeichen), `(eier)`, `11(100)` bleiben unverändert. |
 
 ## Installieren
-Anleitung: **https://sikkkilaci.github.io/lagzero-word-addin/**
+Anleitung: **https://ademtasdemir-dev.github.io/lagzero-word-addin/**
 
-Kurz: [`manifest.xml`](https://sikkkilaci.github.io/lagzero-word-addin/manifest.xml) herunterladen → Word → Start → Add-Ins → Weitere Add-Ins → Meine Add-Ins → Benutzerdefiniertes Add-In hochladen.
+Kurz: [`manifest.xml`](https://ademtasdemir-dev.github.io/lagzero-word-addin/manifest.xml) herunterladen → Word → Start → Add-Ins → Weitere Add-Ins → Meine Add-Ins → Benutzerdefiniertes Add-In hochladen.
 
 ## Aufbau
 ```
