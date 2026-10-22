@@ -28,7 +28,7 @@ Partner-Center-Konto (kostenlos), Einreichung mit privacy.html + support.html, I
 Direkt, einfache Sprache, wenig Fachchinesisch. Anleitungen als HTML im LAG|ZERØ-Design + ZIP.
 Bei Dateisammlungen immer ein anklickbares HTML-Inhaltsverzeichnis.
 
-## Verteilung (Stand v1.0.4)
+## Verteilung (Stand v1.1.1)
 - Paket `download/LAGZERO_Word_Tools.zip`: ANLEITUNG.html, Installieren.bat, Deinstallieren.bat, lagzero-word-addin.xml (= manifest.xml), Testdokument.docx, media/
 - Installieren.bat: kopiert Manifest nach `%LOCALAPPDATA%\LAGZERO\WordKatalog` und trägt ihn als
   TrustedCatalog `{212c4ebf-75af-4458-b496-34fd6f3ecf0b}` mit UNC-Pfad `\\localhost\C$\...` ein (Flags=1).
@@ -37,3 +37,8 @@ Bei Dateisammlungen immer ein anklickbares HTML-Inhaltsverzeichnis.
 - Word cached Add-In-Dateien sehr hartnäckig: bei Updates `?v=` hochzählen, Version im Manifest erhöhen;
   beim Entwickeln half nur eine neue `<Id>` (dann neu hinzufügen). Manifest im Paket immer mit neu bauen.
 - Debug: in `src/commands.js` `LZ_DEBUG = true` schreibt Ergebnis/Fehler als Zeile ins Dokument.
+
+## Tool #02 Potenz hochstellen (v1.1.1)
+- Wildcards `^^[0-9]@>` und `^^-[0-9]@>` (`^^` = echtes ^, `>` = Wortende, sonst nur 1. Ziffer), danach Regex `^\^-?\d+$`
+- `Alles formatieren` = #01 dann #02. Strg+Z braucht danach mehrere Schritte (ca. 4).
+- Anleitung/Bilder: /home/claude/guide (build_html.py, build_v11.py)
